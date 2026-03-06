@@ -3,22 +3,22 @@ export default function Services() {
         {
             title: "Design & Build",
             desc: "Expertly integrating architectural design with high-quality construction through a single point of responsibility for streamlined results.",
-            img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+            img: "/images/service_design_build.png"
         },
         {
             title: "Maintenance",
             desc: "Dedicated property and facility maintenance solutions designed to ensure asset longevity, safety, and peak operational performance.",
-            img: "https://images.eu.ctfassets.net/hhrr8k5zoywj/6pcfycg3qe7CXjvB91hevm/d929a94de167b3242bf7a6b1d5ce42ea/Top_10_construction_jobs.jpg"
+            img: "/images/service_maintenance.png"
         },
         {
             title: "Project Management",
             desc: "Strategic oversight and rigorous coordination of construction projects, guaranteeing strict adherence to timelines and safety standards.",
-            img: "https://images.unsplash.com/photo-1454165833767-027ee0859600?q=80&w=1200&auto=format&fit=crop"
+            img: "/images/service_project_management.png"
         },
         {
             title: "Construction",
             desc: "High-performance construction execution for residential and commercial developments, focused on precision and premium craftsmanship.",
-            img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+            img: "/images/service_construction.png"
         }
     ];
 

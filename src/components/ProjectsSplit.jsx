@@ -8,7 +8,7 @@ export default function ProjectsSplit() {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop)',
+                    backgroundImage: 'url(/images/services_residential.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     transition: 'transform 0.8s ease'
@@ -50,7 +50,7 @@ export default function ProjectsSplit() {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop)',
+                    backgroundImage: 'url(/images/services_commercial.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     transition: 'transform 0.8s ease'

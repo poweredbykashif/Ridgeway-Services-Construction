@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react';
 const slides = [
     {
         title: "Engineering Excellence with Precision",
-        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop",
+        img: "/images/slide1.png",
         tag: "Residential & Commercial"
     },
     {
         title: "Building the Future of Metropolitan Living",
-        img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop",
+        img: "/images/slide2.png",
         tag: "Modern Architecture"
     },
     {
         title: "Sustainable Construction & Custom Design",
-        img: "https://s.yimg.com/ny/api/res/1.2/wDx6XoQ9OqCRElXo2xM61Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NDY-/https://s.yimg.com/os/creatr-uploaded-images/2023-12/a6795120-9a25-11ee-b7f7-5bdc2fe5760e",
+        img: "/images/slide3.png",
         tag: "Design & Build"
     }
 ];
