@@ -8,7 +8,7 @@ export default function Services() {
         {
             title: "Maintenance",
             desc: "Dedicated property and facility maintenance solutions designed to ensure asset longevity, safety, and peak operational performance.",
-            img: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?q=80&w=1200&auto=format&fit=crop"
+            img: "https://images.eu.ctfassets.net/hhrr8k5zoywj/6pcfycg3qe7CXjvB91hevm/d929a94de167b3242bf7a6b1d5ce42ea/Top_10_construction_jobs.jpg"
         },
         {
             title: "Project Management",
