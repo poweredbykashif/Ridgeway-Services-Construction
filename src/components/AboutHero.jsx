@@ -19,7 +19,7 @@ const slides = [
     },
     {
         title: "Commercial & Residential Expertise",
-        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2400&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1503387762-592be5a52680?q=80&w=2400&auto=format&fit=crop",
         tag: "Master Craftsmanship"
     }
 ];
@@ -71,12 +71,13 @@ export default function AboutHero() {
                 zIndex: 10,
                 height: '100%',
                 display: 'flex',
-                alignItems: 'flex-start',
+                alignItems: 'center', /* Changed from flex-start to center for better alignment */
                 justifyContent: 'flex-start',
                 textAlign: 'left',
-                paddingTop: '10rem', /* Reduced space from top */
-                maxWidth: '1400px', /* Matching header-inner max-width */
-                paddingLeft: '2rem'  /* Matching header-inner padding-left */
+                paddingTop: '6rem', /* Reduced from 10rem */
+                paddingBottom: '4rem',
+                maxWidth: '1400px',
+                paddingLeft: '2rem'
             }}>
                 <div className="hero-content" style={{ maxWidth: '900px', color: '#fff', paddingLeft: '0' }}>
                     <div className="animate-fade-in" key={current}>

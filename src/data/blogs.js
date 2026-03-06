@@ -5,7 +5,7 @@ export const blogs = [
         title: "Top Construction Trends 2026",
         desc: "Discover what is shaping the future of building in the metropolitan landscape.",
         tag: "News",
-        img: "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1000",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
         date: "March 15, 2024",
         author: "John Ridgeway",
         content: `<p>The construction industry is undergoing a massive transformation as we head into 2026...</p>`

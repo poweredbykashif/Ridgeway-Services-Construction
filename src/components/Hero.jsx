@@ -14,7 +14,7 @@ const slides = [
     },
     {
         title: "Sustainable Construction & Custom Design",
-        img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2400&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1503387762-592be5a52680?q=80&w=2400&auto=format&fit=crop",
         tag: "Design & Build"
     }
 ];

@@ -3,7 +3,7 @@ export default function Services() {
         {
             title: "Design & Build",
             desc: "Expertly integrating architectural design with high-quality construction through a single point of responsibility for streamlined results.",
-            img: "https://images.unsplash.com/photo-1503387762-592be5a52680?q=80&w=1200&auto=format&fit=crop"
+            img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
         },
         {
             title: "Maintenance",
@@ -18,7 +18,7 @@ export default function Services() {
         {
             title: "Construction",
             desc: "High-performance construction execution for residential and commercial developments, focused on precision and premium craftsmanship.",
-            img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1200&auto=format&fit=crop"
+            img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
         }
     ];
 
