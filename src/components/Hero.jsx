@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react';
 const slides = [
     {
         title: "Engineering Excellence with Precision",
-        img: "/images/slide1.png",
+        img: "/images/hero_slide_1.png",
         tag: "Residential & Commercial"
     },
     {
         title: "Building the Future of Metropolitan Living",
-        img: "/images/slide2.png",
+        img: "/images/hero_slide_2.png",
         tag: "Modern Architecture"
     },
     {
         title: "Sustainable Construction & Custom Design",
-        img: "/images/slide3.png",
+        img: "/images/hero_slide_3.png",
         tag: "Design & Build"
     }
 ];

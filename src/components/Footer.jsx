@@ -1,7 +1,7 @@
 "use client";
 export default function Footer() {
     return (
-        <footer className="footer animate-fade-in" style={{
+        <footer className="footer animate-fade-in" suppressHydrationWarning style={{
             backgroundColor: '#111111',
             color: '#ffffff',
             paddingTop: 'var(--ds-spacing-xl)',
@@ -25,7 +25,7 @@ export default function Footer() {
                         <ul style={{ listStyle: 'none', padding: 0 }}>
                             {['Home', 'About Us', 'Services', 'Projects', 'Blog', 'Contact'].map(link => (
                                 <li key={link} style={{ marginBottom: '0.75rem' }}>
-                                    <a href={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '')}`} style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'var(--ds-accent-main)'} onMouseOut={(e) => e.target.style.color = 'rgba(255,255,255,0.6)'}>{link}</a>
+                                    <a href={link === 'Home' ? '/' : (link === 'About Us' ? '/about' : `/${link.toLowerCase().replace(' ', '')}`)} style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'var(--ds-accent-main)'} onMouseOut={(e) => e.target.style.color = 'rgba(255,255,255,0.6)'}>{link}</a>
                                 </li>
                             ))}
                         </ul>

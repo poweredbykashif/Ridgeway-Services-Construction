@@ -32,10 +32,26 @@ export default function Services() {
                 <div className="services-grid">
                     {services.map((s, i) => (
                         <div key={i} className="service-item" style={{ textAlign: 'left', alignItems: 'flex-start' }}>
-                            <div className="service-img-wrapper" style={{ boxShadow: 'var(--ds-shadow-md)', borderRadius: 'var(--ds-radius-md)' }}>
+                            <div className="service-img-wrapper" style={{ boxShadow: 'var(--ds-shadow-md)', borderRadius: 'var(--ds-radius-md)', position: 'relative' }}>
                                 <img src={s.img} alt={s.title} className="service-img" />
-                                <div className="service-title-box">
-                                    <h3>{s.title}</h3>
+                                <div style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7))',
+                                    zIndex: 1
+                                }}></div>
+                                <div className="service-title-box" style={{
+                                    zIndex: 2,
+                                    backgroundColor: 'var(--ds-accent-main)',
+                                    backdropFilter: 'blur(10px)',
+                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    color: '#fff',
+                                    borderRadius: 'var(--ds-radius-sm)'
+                                }}>
+                                    <h3 style={{ color: '#fff', fontSize: '1.2rem' }}>{s.title}</h3>
                                 </div>
                             </div>
                             <p className="body-text" style={{ padding: '0', textAlign: 'left', marginTop: '1rem' }}>{s.desc}</p>

@@ -169,7 +169,7 @@ export default function Blogs({ className = "" }) {
                                 e.currentTarget.style.boxShadow = 'var(--ds-shadow-sm)';
                             }}>
                             <div className="blog-card-img" style={{
-                                backgroundImage: `url(${b.img})`,
+                                backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${b.img})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '240px'
@@ -179,7 +179,7 @@ export default function Blogs({ className = "" }) {
                                 <h3 className="heading-3" style={{ marginTop: '0.75rem', marginBottom: '1rem', fontSize: '1.4rem', fontWeight: '600' }}>{b.title}</h3>
                                 <p className="body-text" style={{ fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', color: 'var(--ds-text-secondary)' }}>{b.desc}</p>
                                 <a href={`/blog/${b.slug}`} style={{
-                                    color: 'var(--ds-text-primary)',
+                                    color: 'var(--ds-accent-main)',
                                     textDecoration: 'none',
                                     fontWeight: 'bold',
                                     fontSize: '0.9rem',

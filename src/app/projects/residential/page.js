@@ -44,15 +44,7 @@ export default function ResidentialProjects() {
                                 gap: '1.5rem',
                                 marginBottom: '3rem'
                             }}>
-                                {/* We use 1 main image and 5 stylized architectural shots to fill the 6-slot request */}
-                                {[
-                                    project.img,
-                                    `https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1000&auto=format&fit=crop`
-                                ].map((url, i) => (
+                                {project.gallery.map((url, i) => (
                                     <div key={i} style={{
                                         height: '350px',
                                         borderRadius: 'var(--ds-radius-md)',

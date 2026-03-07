@@ -19,7 +19,7 @@ export default async function ProjectDetailPage({ params }) {
         <div style={{ backgroundColor: 'var(--ds-bg-primary)', minHeight: '100vh' }}>
             <Header />
 
-            <article className="project-detail-wrapper" style={{ padding: 'var(--ds-spacing-xl) 5% var(--ds-spacing-xl)' }}>
+            <article className="project-detail-wrapper" style={{ padding: 'var(--ds-spacing-xl) 0' }}>
                 <div className="container">
                     <div style={{ marginBottom: '3rem' }}>
                         <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>

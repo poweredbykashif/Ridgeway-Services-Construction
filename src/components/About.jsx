@@ -90,7 +90,7 @@ export default function About() {
                         <a href="/contact" className="btn" style={{
                             padding: '1rem 2.5rem',
                             borderRadius: 'var(--ds-radius-sm)',
-                            background: 'var(--ds-text-primary)',
+                            background: 'var(--ds-accent-main)',
                             color: '#fff',
                             fontWeight: '600'
                         }}>Our Story →</a>

@@ -1,7 +1,7 @@
 export const residentialProjects = [
     {
         slug: "keele-st-apartments",
-        title: "2110 Keele St Apartments",
+        title: "2-1-2021 Apartments",
         location: "Toronto, ON",
         img: "/images/project_keele.png",
         year: "2024",
@@ -9,17 +9,25 @@ export const residentialProjects = [
         status: "Completed",
         shortDesc: "A sophisticated multi-residential development featuring modern amenities and sustainable architectural design.",
         fullDesc: `
-            Located in the heart of Toronto, the 2110 Keele St Apartments project is a testament to modern urban development. This 12-story residential landmark was engineered to provide high-density living without compromising on luxury or environmental responsibility.
+            Located in the heart of Toronto, the 2-1-2021 Apartments project is a testament to modern urban development. This 12-story residential landmark was engineered to provide high-density living without compromising on luxury or environmental responsibility.
             <br/><br/>
             Our team was responsible for the full structural execution, interior fit-outs, and facade installation. The building features an advanced energy-efficient HVAC system, floor-to-ceiling windows for natural lighting, and premium shared amenities including a rooftop garden and state-of-the-art fitness center.
             <br/><br/>
             The project was delivered ahead of schedule, showcasing Ridgeway's commitment to precision and efficiency in large-scale residential construction.
         `,
-        features: ["12-Story Concrete Structure", "85 Premium Suites", "LEED Certified Design", "Underground Parking Facility", "High-End Lobby Design"]
+        features: ["12-Story Concrete Structure", "85 Premium Suites", "LEED Certified Design", "Underground Parking Facility", "High-End Lobby Design"],
+        gallery: [
+            "/images/project_keele.png",
+            "/images/services_condo.png",
+            "/images/about_thumbnail_1.png",
+            "/images/slide1.png",
+            "/images/service_design_build.png",
+            "/images/project_keele.png"
+        ]
     },
     {
         slug: "weldrick-townhouses",
-        title: "Weldrick Townhouses",
+        title: "Well Drick Townhouses",
         location: "Richmond Hill, ON",
         img: "/images/project_weldrick.png",
         year: "2023",
@@ -27,17 +35,25 @@ export const residentialProjects = [
         status: "Completed",
         shortDesc: "Exclusive luxury townhouses combining elegant masonry with functional, high-end interior spaces.",
         fullDesc: `
-            The Weldrick Townhouse development in Richmond Hill is an exclusive enclave of 24 custom-designed luxury homes. This project focused on creating a seamless blend between classic architectural permanence and contemporary interior luxury.
+            The Well Drick Townhouse development in Richmond Hill is an exclusive enclave of 24 custom-designed luxury homes. This project focused on creating a seamless blend between classic architectural permanence and contemporary interior luxury.
             <br/><br/>
             Ridgeway Services & Construction led the project from ground-breaking to final handover. Key architectural highlights include hand-laid stone facades, 10-foot ceilings on the main level, and private terrace access for every unit.
             <br/><br/>
             The interiors were outfitted with bespoke cabinetry, Italian marble countertops, and smart home integration, making them some of the most sought-after residences in the Richmond Hill area.
         `,
-        features: ["24 Custom Luxury Units", "Stone & Brick Facade", "Smart Home Integration", "Private Rooftop Terraces", "High-End Kitchen Suite"]
+        features: ["24 Custom Luxury Units", "Stone & Brick Facade", "Smart Home Integration", "Private Rooftop Terraces", "High-End Kitchen Suite"],
+        gallery: [
+            "/images/project_weldrick.png",
+            "/images/services_residential.png",
+            "/images/about_thumbnail_2.png",
+            "/images/slide4.png",
+            "/images/service_maintenance.png",
+            "/images/project_weldrick.png"
+        ]
     },
     {
         slug: "edenrock-townhouses",
-        title: "Edenrock Townhouses",
+        title: "Eden Rock Townhouses",
         location: "Greater Toronto Area",
         img: "/images/project_edenrock.png",
         year: "2023",
@@ -45,13 +61,21 @@ export const residentialProjects = [
         status: "Completed",
         shortDesc: "Premium contemporary residential community designed with minimalist aesthetics and premium finishes.",
         fullDesc: `
-            Edenrock Townhouses represent a paradigm shift in modern suburban living. Located in a growing residential hub of the GTA, this 18-unit development was designed for the modern professional seeking minimalist beauty and functional efficiency.
+            Eden Rock Townhouses represent a paradigm shift in modern suburban living. Located in a growing residential hub of the GTA, this 18-unit development was designed for the modern professional seeking minimalist beauty and functional efficiency.
             <br/><br/>
             Our construction approach utilized modular components to ensure rapid delivery without sacrificing structural integrity. The design language is characterized by clean lines, a monochromatic palette, and large architectural glass sections that blur the line between indoor and outdoor space.
             <br/><br/>
             Sustainable building practices were prioritized throughout, including high-performance insulation and low-VOC finishes, ensuring a healthy and efficient living environment for all residents.
         `,
-        features: ["18 Contemporary Units", "Minimalist Design Language", "Modular Construction Hybrid", "Energy-Efficient Building Envelope", "Private Landscaped Yards"]
+        features: ["18 Contemporary Units", "Minimalist Design Language", "Modular Construction Hybrid", "Energy-Efficient Building Envelope", "Private Landscaped Yards"],
+        gallery: [
+            "/images/project_edenrock.png",
+            "/images/services_condo.png",
+            "/images/about_thumbnail_3.png",
+            "/images/slide3.png",
+            "/images/service_design_build.png",
+            "/images/project_edenrock.png"
+        ]
     }
 ];
 
