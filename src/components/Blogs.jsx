@@ -158,7 +158,9 @@ export default function Blogs({ className = "" }) {
                             transition: 'all 0.4s ease',
                             border: '1px solid var(--ds-border-light)',
                             flex: '0 0 380px',
-                            scrollSnapAlign: 'start'
+                            scrollSnapAlign: 'start',
+                            display: 'flex',
+                            flexDirection: 'column'
                         }}
                             onMouseOver={(e) => {
                                 e.currentTarget.style.transform = 'translateY(-10px)';
@@ -172,9 +174,10 @@ export default function Blogs({ className = "" }) {
                                 backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${b.img})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                height: '240px'
+                                height: '240px',
+                                flexShrink: 0
                             }} />
-                            <div className="blog-card-content" style={{ padding: '2rem' }}>
+                            <div className="blog-card-content" style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <span style={{ color: 'var(--ds-accent-main)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{b.tag}</span>
                                 <h3 className="heading-3" style={{ marginTop: '0.75rem', marginBottom: '1rem', fontSize: '1.4rem', fontWeight: '600' }}>{b.title}</h3>
                                 <p className="body-text" style={{ fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', color: 'var(--ds-text-secondary)' }}>{b.desc}</p>
@@ -185,7 +188,8 @@ export default function Blogs({ className = "" }) {
                                     fontSize: '0.9rem',
                                     display: 'inline-flex',
                                     alignItems: 'center',
-                                    gap: '0.5rem'
+                                    gap: '0.5rem',
+                                    marginTop: 'auto'
                                 }}>
                                     Read Article <span>→</span>
                                 </a>
