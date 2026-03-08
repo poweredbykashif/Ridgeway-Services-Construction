@@ -40,21 +40,51 @@ export default function Services() {
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
-                                    background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7))',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%)',
                                     zIndex: 1
                                 }}></div>
-                                <div className="service-title-box" style={{
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '30px',
+                                    left: '0',
+                                    width: '100%',
+                                    padding: '0 1.5rem',
                                     zIndex: 2,
-                                    backgroundColor: 'var(--ds-accent-main)',
-                                    backdropFilter: 'blur(10px)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                    color: '#fff',
-                                    borderRadius: 'var(--ds-radius-sm)'
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '1.25rem'
                                 }}>
-                                    <h3 style={{ color: '#fff', fontSize: '1.2rem' }}>{s.title}</h3>
+                                    <p className="body-text" style={{
+                                        padding: '0',
+                                        textAlign: 'center',
+                                        color: '#ffffff',
+                                        fontSize: '0.9rem',
+                                        lineHeight: '1.6',
+                                        textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                                        opacity: 0.95,
+                                        margin: 0
+                                    }}>{s.desc}</p>
+                                    <div className="service-title-box" style={{
+                                        position: 'relative',
+                                        bottom: 'auto',
+                                        left: 'auto',
+                                        width: '100%',
+                                        backgroundColor: 'var(--ds-accent-main)',
+                                        backdropFilter: 'blur(10px)',
+                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        color: '#fff',
+                                        borderRadius: 'var(--ds-radius-sm)',
+                                        padding: '0.8rem 1rem',
+                                        minHeight: 'auto',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                        <h3 style={{ color: '#fff', fontSize: '1.1rem', margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.title}</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <p className="body-text" style={{ padding: '0', textAlign: 'left', marginTop: '1rem' }}>{s.desc}</p>
                         </div>
                     ))}
                 </div>

@@ -12,13 +12,13 @@ export default function ResidentialProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding" style={{ textAlign: 'center', paddingTop: 'var(--ds-spacing-xl)' }}>
+                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
                         <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Portfolio
                         </span>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem', marginTop: '0.5rem' }}>Residential</h1>
-                        <p className="body-text" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        <p className="body-text" style={{ maxWidth: '800px', margin: '0', fontSize: '1.1rem' }}>
                             Our residential portfolio showcases unparalleled attention to detail and bespoke design solutions,
                             transforming visions into premium living spaces across the Greater Toronto Area.
                         </p>

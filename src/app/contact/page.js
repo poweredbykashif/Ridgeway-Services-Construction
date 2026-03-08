@@ -9,7 +9,7 @@ export default function ContactPage() {
 
             <main>
                 {/* Header Section */}
-                <section className="section-padding" style={{ textAlign: 'center', paddingTop: 'var(--ds-spacing-xl)', position: 'relative', overflow: 'hidden' }}>
+                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255, 213, 79, 0.05) 0%, transparent 70%)', zIndex: 0 }}></div>
 
                     <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -17,7 +17,7 @@ export default function ContactPage() {
                             Get In Touch
                         </div>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>Contact Us</h1>
-                        <p className="body-text" style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        <p className="body-text" style={{ maxWidth: '700px', margin: '0', fontSize: '1.1rem' }}>
                             Have a project in mind or need expert advice? Reach out to our team today.
                             We're here to turn your vision into reality with precision and excellence.
                         </p>

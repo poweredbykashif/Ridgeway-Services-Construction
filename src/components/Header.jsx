@@ -21,7 +21,7 @@ export default function Header() {
 
   const textColor = (scrolled || isLightPage) ? 'var(--ds-text-primary)' : '#fff';
   const subTextColor = (scrolled || isLightPage) ? 'var(--ds-text-secondary)' : 'rgba(255,255,255,0.7)';
-  const bgColor = scrolled ? 'rgba(255, 255, 255, 0.95)' : (isLightPage ? 'rgba(255, 255, 255, 0.8)' : 'transparent');
+  const bgColor = scrolled ? 'rgba(255, 255, 255, 0.95)' : (isLightPage ? 'rgba(255, 255, 255, 0.95)' : 'transparent');
 
   return (
     <header className="header" suppressHydrationWarning style={{
@@ -32,15 +32,17 @@ export default function Header() {
       backdropFilter: (scrolled || isLightPage) ? 'blur(10px)' : 'none',
       boxShadow: scrolled ? 'var(--ds-shadow-sm)' : 'none',
       borderBottom: (scrolled || isLightPage) ? '1px solid var(--ds-border-light)' : 'none',
-      zIndex: 1000
+      zIndex: 1000,
+      padding: 0 // Clearinherited padding
     }}>
       <div className="header-inner container" style={{
-        padding: '1rem var(--ds-spacing-md)',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: '85px', // Consistent height for vertical centering
+        padding: '0 var(--ds-spacing-md)'
       }}>
-        <a href="/" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
+        <a href="/" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', justifyContent: 'center' }}>
           <span className="logo" style={{
             lineHeight: 1,
             color: textColor,
@@ -58,7 +60,7 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="nav" style={{ display: 'flex', gap: '2.5rem' }}>
+        <nav className="nav" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
           {['Home', 'About Us', 'Services', 'Projects', 'Blog'].map((item) => (
             <a
               key={item}
@@ -78,12 +80,12 @@ export default function Header() {
         </nav>
 
         <a href="/contact" className="btn" style={{
-          background: '#ff6600',
-          color: '#fff',
-          borderRadius: '2rem',
-          padding: '0.7rem 1.8rem',
+          padding: '0.65rem 1.6rem',
           fontSize: '0.9rem',
-          boxShadow: '0 4px 15px rgba(255,102,0,0.3)'
+          fontWeight: '600',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}>Contact Us</a>
       </div>
     </header>

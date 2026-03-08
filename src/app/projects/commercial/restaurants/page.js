@@ -47,15 +47,17 @@ export default function RestaurantProjects() {
 
             <main>
                 {/* Header Section */}
-                <section className="section-padding" style={{ textAlign: 'center', paddingTop: 'var(--ds-spacing-xl)' }}>
-                    <div style={{ display: 'inline-block', padding: '0.25rem 1rem', backgroundColor: '#ffd54f', color: '#000', fontWeight: 'bold', fontSize: '0.75rem', borderRadius: '4px', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                        Commercial Portfolio
+                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
+                    <div className="container">
+                        <div style={{ display: 'inline-block', padding: '0.25rem 1rem', backgroundColor: '#ffd54f', color: '#000', fontWeight: 'bold', fontSize: '0.75rem', borderRadius: '4px', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                            Commercial Portfolio
+                        </div>
+                        <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>Restaurant Projects</h1>
+                        <p className="body-text" style={{ maxWidth: '800px', margin: '0', fontSize: '1.1rem' }}>
+                            Specializing in high-performance hospitality construction. From global franchises to boutique eateries,
+                            we deliver spaces that reflect brand excellence and operational efficiency.
+                        </p>
                     </div>
-                    <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>Restaurant Projects</h1>
-                    <p className="body-text" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem' }}>
-                        Specializing in high-performance hospitality construction. From global franchises to boutique eateries,
-                        we deliver spaces that reflect brand excellence and operational efficiency.
-                    </p>
                 </section>
 
                 {/* Restaurant Brand Sections */}
@@ -64,8 +66,8 @@ export default function RestaurantProjects() {
                         <div style={{
                             backgroundColor: '#ffd54f',
                             color: '#000',
-                            padding: '1.5rem',
-                            textAlign: 'center',
+                            padding: '1.5rem 2rem',
+                            textAlign: 'left',
                             marginBottom: '2rem',
                             borderRadius: '8px',
                             fontWeight: '800',

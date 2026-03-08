@@ -54,12 +54,12 @@
     position: relative;
     z-index: 10;
     max-width: 800px;
-    padding: 0 var(--ds-spacing-md);
+    padding: 0;
 }
 
 @media (min-width: 768px) {
     .hero-content {
-        padding: 0 var(--ds-spacing-lg);
+        padding: 0;
     }
 }
 
@@ -168,6 +168,7 @@
 @media (min-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: var(--ds-spacing-md);
     }
 }
 
@@ -196,7 +197,7 @@
 
 @media (min-width: 1024px) {
     .service-img-wrapper {
-        height: 500px;
+        height: 480px;
     }
 }
 
@@ -209,7 +210,7 @@
 }
 
 .service-item:hover .service-img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .service-title-box {
@@ -601,13 +602,11 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--ds-spacing-lg);
-    padding: 0 var(--ds-spacing-md);
 }
 
 @media (min-width: 768px) {
     .footer-grid {
         grid-template-columns: repeat(4, 1fr);
-        padding: 0 var(--ds-spacing-lg);
     }
 }
 
@@ -652,7 +651,7 @@
 
 /* New Blog Page Design */
 .blog-hero {
-    text-align: center;
+    text-align: left;
     position: relative;
     background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;

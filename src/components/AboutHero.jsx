@@ -9,7 +9,7 @@ const slides = [
     },
     {
         title: "World Class Construction Services",
-        img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2400&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2400&auto=format&fit=crop",
         tag: "Global Standards"
     },
     {
@@ -19,7 +19,7 @@ const slides = [
     },
     {
         title: "Commercial & Residential Expertise",
-        img: "https://images.unsplash.com/photo-1503387762-592be5a52680?q=80&w=2400&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2400&auto=format&fit=crop",
         tag: "Master Craftsmanship"
     }
 ];
@@ -36,7 +36,7 @@ export default function AboutHero() {
 
     return (
         <section className="about-hero" style={{
-            height: '85vh',
+            height: '95vh',
             position: 'relative',
             overflow: 'hidden',
             backgroundColor: '#000'
@@ -71,13 +71,11 @@ export default function AboutHero() {
                 zIndex: 10,
                 height: '100%',
                 display: 'flex',
-                alignItems: 'center', /* Changed from flex-start to center for better alignment */
+                alignItems: 'flex-start',
                 justifyContent: 'flex-start',
                 textAlign: 'left',
-                paddingTop: '6rem', /* Reduced from 10rem */
-                paddingBottom: '4rem',
-                maxWidth: '1400px',
-                paddingLeft: '2rem'
+                paddingTop: '12rem',
+                paddingBottom: '4rem'
             }}>
                 <div className="hero-content" style={{ maxWidth: '900px', color: '#fff', paddingLeft: '0' }}>
                     <div className="animate-fade-in" key={current}>

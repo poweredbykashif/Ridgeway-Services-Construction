@@ -38,13 +38,13 @@ export default function CommercialProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding" style={{ textAlign: 'center', paddingTop: 'var(--ds-spacing-xl)' }}>
+                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
                         <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Specialized Sectors
                         </span>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem', marginTop: '0.5rem' }}>Commercial</h1>
-                        <p className="body-text" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        <p className="body-text" style={{ maxWidth: '800px', margin: '0', fontSize: '1.1rem' }}>
                             Providing robust commercial spaces across diverse industries, from luxury retail to sophisticated
                             office environments and specialized childhood education facilities.
                         </p>

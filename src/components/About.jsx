@@ -1,15 +1,20 @@
 export default function About() {
     return (
-        <section id="about" className="about-us-section" style={{ backgroundColor: 'var(--ds-bg-secondary)', overflow: 'hidden' }}>
-            <div className="container section-padding">
-                <div className="about-us-inner animate-fade-in" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+        <section id="about" className="section-padding" style={{ backgroundColor: 'var(--ds-bg-secondary)', overflow: 'hidden' }}>
+            <div className="container">
+                <div className="about-us-inner animate-fade-in" style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))',
+                    gap: '6rem',
+                    alignItems: 'center'
+                }}>
 
                     {/* Visual Collage Area */}
-                    <div style={{ position: 'relative', height: '600px' }}>
+                    <div style={{ position: 'relative', height: '550px', display: 'flex', alignItems: 'center' }}>
                         {/* Main Image */}
                         <div style={{
                             width: '85%',
-                            height: '80%',
+                            height: '90%',
                             borderRadius: 'var(--ds-radius-md)',
                             overflow: 'hidden',
                             boxShadow: 'var(--ds-shadow-lg)',
@@ -46,18 +51,19 @@ export default function About() {
                         {/* Decorative Element */}
                         <div style={{
                             position: 'absolute',
-                            top: '-20px',
-                            left: '-20px',
+                            top: '0',
+                            left: '0',
                             width: '100px',
                             height: '100px',
                             borderLeft: '5px solid var(--ds-accent-main)',
                             borderTop: '5px solid var(--ds-accent-main)',
-                            zIndex: 1
+                            zIndex: 1,
+                            transform: 'translate(-15px, -15px)'
                         }} />
                     </div>
 
                     {/* Content Area */}
-                    <div className="about-content">
+                    <div className="about-content" style={{ padding: '2rem 0' }}>
                         <span style={{
                             color: 'var(--ds-accent-main)',
                             fontWeight: 'bold',
@@ -92,7 +98,8 @@ export default function About() {
                             borderRadius: 'var(--ds-radius-sm)',
                             background: 'var(--ds-accent-main)',
                             color: '#fff',
-                            fontWeight: '600'
+                            fontWeight: '600',
+                            textDecoration: 'none'
                         }}>Our Story →</a>
                     </div>
                 </div>

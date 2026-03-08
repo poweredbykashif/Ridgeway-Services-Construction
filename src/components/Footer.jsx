@@ -7,11 +7,11 @@ export default function Footer() {
             paddingTop: 'var(--ds-spacing-xl)',
             borderTop: '1px solid rgba(255,255,255,0.05)'
         }}>
-            <div className="container">
+            <div className="container" style={{ width: '100%' }}>
                 <div className="footer-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: '4rem',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: 'var(--ds-spacing-md)',
                     marginBottom: '4rem'
                 }}>
                     <div className="footer-col">

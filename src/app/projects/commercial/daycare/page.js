@@ -14,13 +14,13 @@ export default function DaycareProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding" style={{ textAlign: 'center', paddingTop: 'var(--ds-spacing-xl)' }}>
+                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
                         <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Sector: Specialized Facilities
                         </span>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem', marginTop: '0.5rem' }}>Daycare & Education</h1>
-                        <p className="body-text" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        <p className="body-text" style={{ maxWidth: '800px', margin: '0', fontSize: '1.1rem' }}>
                             Creating safe, inspiring, and functional spaces for early childhood education and specialized care.
                             Our facilities are built to the highest safety standards while fostering a nurturing environment.
                         </p>
@@ -32,7 +32,7 @@ export default function DaycareProjects() {
                     <section key={idx} className="section-padding" style={{ borderTop: idx !== 0 ? '1px solid var(--ds-border-light)' : 'none' }}>
                         <div className="container">
                             {/* Project Title */}
-                            <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                            <div style={{ marginBottom: '3rem', textAlign: 'left' }}>
                                 <h2 className="heading-2" style={{ marginBottom: '0.5rem' }}>{project.title}</h2>
                                 <p style={{ color: 'var(--ds-text-secondary)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
                                     {project.location} • {project.type}
@@ -77,7 +77,7 @@ export default function DaycareProjects() {
                                 ))}
                             </div>
 
-                            <div style={{ textAlign: 'center' }}>
+                            <div style={{ textAlign: 'left' }}>
                                 <a href={`/projects/commercial/${project.slug}`} className="btn outline">View Design Specs</a>
                             </div>
                         </div>
