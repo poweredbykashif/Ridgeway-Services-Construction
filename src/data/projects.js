@@ -17,12 +17,12 @@ export const residentialProjects = [
         `,
         features: ["12-Story Concrete Structure", "85 Premium Suites", "LEED Certified Design", "Underground Parking Facility", "High-End Lobby Design"],
         gallery: [
-            "/images/project_keele.png",
-            "/images/services_condo.png",
-            "/images/about_thumbnail_1.png",
-            "/images/slide1.png",
-            "/images/service_design_build.png",
-            "/images/project_keele.png"
+            { url: "/images/project_keele.png", title: "Main Facade", desc: "The external elevation showing the modern glass and concrete structure." },
+            { url: "/images/services_condo.png", title: "Lobby Entrance", desc: "A premium, high-ceiling reception area with custom lighting." },
+            { url: "/images/about_thumbnail_1.png", title: "Rooftop Terrace", desc: "Sustainable green roof and lounge area for residents." },
+            { url: "/images/slide1.png", title: "Interior Suite", desc: "Open-concept living space with floor-to-ceiling windows." },
+            { url: "/images/service_design_build.png", title: "Structural Detail", desc: "Precision engineering showcasing the building's skeleton." },
+            { url: "/images/project_keele.png", title: "Night View", desc: "The building illuminated, highlighting its architectural geometry." }
         ]
     },
     {
@@ -43,12 +43,12 @@ export const residentialProjects = [
         `,
         features: ["24 Custom Luxury Units", "Stone & Brick Facade", "Smart Home Integration", "Private Rooftop Terraces", "High-End Kitchen Suite"],
         gallery: [
-            "/images/project_weldrick.png",
-            "/images/services_residential.png",
-            "/images/about_thumbnail_2.png",
-            "/images/slide4.png",
-            "/images/service_maintenance.png",
-            "/images/project_weldrick.png"
+            { url: "/images/project_weldrick.png", title: "Luxury Exterior", desc: "Hand-laid stone facades that exude permanence and class." },
+            { url: "/images/services_residential.png", title: "Living Quarters", desc: "Expansive 10-foot ceilings with bespoke interior finishes." },
+            { url: "/images/about_thumbnail_2.png", title: "Modern Kitchen", desc: "Chef-inspired spaces with Italian marble and custom cabinetry." },
+            { url: "/images/slide4.png", title: "Master Bedroom", desc: "A sanctuary of comfort with smart home climate integration." },
+            { url: "/images/service_maintenance.png", title: "Private Terrace", desc: "Outdoor living spaces designed for high-end relaxation." },
+            { url: "/images/project_weldrick.png", title: "Community View", desc: "The harmonious blend of the townhouse enclave." }
         ]
     },
     {
@@ -69,12 +69,12 @@ export const residentialProjects = [
         `,
         features: ["18 Contemporary Units", "Minimalist Design Language", "Modular Construction Hybrid", "Energy-Efficient Building Envelope", "Private Landscaped Yards"],
         gallery: [
-            "/images/project_edenrock.png",
-            "/images/services_condo.png",
-            "/images/about_thumbnail_3.png",
-            "/images/slide3.png",
-            "/images/service_design_build.png",
-            "/images/project_edenrock.png"
+            { url: "/images/project_edenrock.png", title: "Minimalist Design", desc: "Clean lines and monochromatic palettes define this community." },
+            { url: "/images/services_condo.png", title: "Glass Architecture", desc: "Large architectural glass sections for natural light optimization." },
+            { url: "/images/about_thumbnail_3.png", title: "Open Floor Plan", desc: "Functional efficiency meets contemporary minimalist beauty." },
+            { url: "/images/slide3.png", title: "Eco-Friendly Suite", desc: "Built with low-VOC finishes and high-performance insulation." },
+            { url: "/images/service_design_build.png", title: "Landscaped Yard", desc: "Private outdoor spaces that blur the line between nature and home." },
+            { url: "/images/project_edenrock.png", title: "Dusk Exterior", desc: "The striking profile of Eden Rock under architectural lighting." }
         ]
     }
 ];
@@ -91,7 +91,12 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "A high-end athletic retail environment featuring custom fixtures and premium finishes.",
             fullDesc: "The Sporting Life project involved a comprehensive interior fit-out of a flagship retail space in Toronto. Our focus was on creating an immersive brand experience through the use of high-grade materials, custom-engineered display units, and advanced retail lighting systems. The result is a sophisticated, high-performance environment that perfectly reflects the brand's premium positioning.",
-            features: ["Custom Retail Fixtures", "Advanced Lighting Systems", "Premium Floor Finishes", "Complex HVAC Integration", "High-Traffic Durability"]
+            features: ["Custom Retail Fixtures", "Advanced Lighting Systems", "Premium Floor Finishes", "Complex HVAC Integration", "High-Traffic Durability"],
+            gallery: [
+                { url: "/images/proj_sporting.png", title: "Main Floor", desc: "Flagship retail layout with high-performance lighting." },
+                { url: "/images/services_condo.png", title: "Custom Fixtures", desc: "Bespoke engineered display units for high-end apparel." },
+                { url: "/images/about_thumbnail_1.png", title: "Entry Way", desc: "Grand entrance with modern architectural glass." }
+            ]
         },
         {
             slug: "mission-thrift",
@@ -103,7 +108,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Large-scale retail conversion featuring industrial-chic design and optimized floor planning.",
             fullDesc: "For the Mission Thrift project, we transformed a large industrial-scale shell into a vibrant, highly organized retail destination. The design utilized an industrial-chic aesthetic with exposed structural elements, track lighting, and a strategic floor plan optimized for high volume inventory management and customer flow. This conversion was delivered on an accelerated timeline to meet seasonal opening requirements.",
-            features: ["Open-Concept Layout", "Industrial Architectural Elements", "Cost-Efficient Lighting", "Large-Scale Floor Prep", "Sustainable Material Reuse"]
+            features: ["Open-Concept Layout", "Industrial Architectural Elements", "Cost-Efficient Lighting", "Large-Scale Floor Prep", "Sustainable Material Reuse"],
+            gallery: [
+                { url: "/images/proj_mission.png", title: "Industrial Chic", desc: "Exposed structural elements and track lighting." },
+                { url: "/images/service_design_build.png", title: "Floor Prep", desc: "Strategic layout for high-volume inventory flow." }
+            ]
         },
         {
             slug: "georgetown-marketplace",
@@ -115,7 +124,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Major retail exterior renovation and facade modernization for a prominent shopping center.",
             fullDesc: "The Georgetown Marketplace project focused on the exterior revitalization of a key regional shopping center. Our scope included structural facade enhancements, modern glazing installation, and updated architectural lighting to improve visibility and aesthetic appeal. This project required strict coordination with existing tenants to ensure minimal disruption to daily business operations while delivering a modern, premium look for the entire development.",
-            features: ["Facade Modernization", "High-Performance Glazing", "Architectural LED Lighting", "Structural Steel Reinforcement", "Tenant Coordination Management"]
+            features: ["Facade Modernization", "High-Performance Glazing", "Architectural LED Lighting", "Structural Steel Reinforcement", "Tenant Coordination Management"],
+            gallery: [
+                { url: "/images/proj_georgetown.png", title: "Modern Facade", desc: "Revitalized exterior with high-performance glazing." },
+                { url: "/images/about_thumbnail_2.png", title: "Site Progress", desc: "Coordinated structural enhancements under live operations." }
+            ]
         }
     ],
     restaurants: [
@@ -129,7 +142,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Premium burrito restaurant featuring high-end industrial design and custom kitchen infrastructure.",
             fullDesc: "The Fat Bastard Burrito project involved the complete design and build-out of a high-traffic flagship location. Our scope included specialized kitchen extraction systems, custom millwork for the service counters, and bold branding elements integrated into the interior architecture. The space combines durability with a premium fast-casual aesthetic.",
-            features: ["Custom Kitchen Exhaust", "Bespoke Counter Millwork", "Industrial Lighting Design", "Heavy-Duty Vinyl Flooring", "Integrated Ordering Systems"]
+            features: ["Custom Kitchen Exhaust", "Bespoke Counter Millwork", "Industrial Lighting Design", "Heavy-Duty Vinyl Flooring", "Integrated Ordering Systems"],
+            gallery: [
+                { url: "/images/comm_restaurant.png", title: "Dining Area", desc: "Industrial design with high-end furniture." },
+                { url: "/images/services_residential.png", title: "Service Counter", desc: "Bespoke millwork designed for rapid customer flow." }
+            ]
         },
         {
             slug: "taco-bell",
@@ -141,7 +158,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Modern Taco Bell location built to rigid corporate standards with localized architectural upgrades.",
             fullDesc: "Working closely with Yum! Brands, we delivered a high-efficiency Taco Bell franchise location. This project required strict adherence to corporate brand standards while managing localized structural requirements. The build features a high-performance drive-thru system, modern interior seating with digital kiosks, and premium exterior cladding.",
-            features: ["Drive-Thru Optimization", "Corporate Brand Alignment", "Digital Kiosk Integration", "Premium Exterior Shell", "High-Volume Kitchen Workflow"]
+            features: ["Drive-Thru Optimization", "Corporate Brand Alignment", "Digital Kiosk Integration", "Premium Exterior Shell", "High-Volume Kitchen Workflow"],
+            gallery: [
+                { url: "/images/comm_retail.png", title: "Modern Seating", desc: "Contemporary interior with digital ordering kiosks." },
+                { url: "/images/hero_crane_bg.png", title: "Exterior Profile", desc: "Modern architectural shell aligned with global standards." }
+            ]
         },
         {
             slug: "osmows",
@@ -153,7 +174,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Clean, vibrant Mediterranean dining space with specialized ventilation and modern seating design.",
             fullDesc: "The Osmows project focused on creating a clean and welcoming environment for one of Canada's fastest-growing Mediterranean brands. The interior features custom woodwork, vibrant brand-specific color palettes, and a highly optimized kitchen layout for high-speed service. Specialized ventilation systems were installed to manage high-heat cooking equipment safely and efficiently.",
-            features: ["Specialized Spit Rotisserie Exhaust", "Vibrant Brand Integration", "Custom Bench Seating", "High-Efficiency LED Lighting", "Durable Commercial Grade Finishes"]
+            features: ["Specialized Spit Rotisserie Exhaust", "Vibrant Brand Integration", "Custom Bench Seating", "High-Efficiency LED Lighting", "Durable Commercial Grade Finishes"],
+            gallery: [
+                { url: "/images/comm_restaurant.png", title: "Interior Layout", desc: "Vibrant Mediterranean theme with custom woodwork." },
+                { url: "/images/service_maintenance.png", title: "Kitchen Efficiency", desc: "Optimized workflow for high-volume preparation." }
+            ]
         }
     ],
     offices: [
@@ -167,7 +192,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "A premium corporate office development featuring expansive glass facades and modern open-plan workflows.",
             fullDesc: "The SCM Markham project represents a benchmark in modern corporate facility design. Ridgeway led the structural and interior development of this high-performance headquarters, focusing on sustainability and employee wellness. The space integrates advanced architectural glass systems for maximum natural light and features flexible collaborative zones to support a dynamic team environment.",
-            features: ["Advanced Glass Curtain Wall", "Open-Plan Collaborative Zones", "Sustainable Material Palette", "High-Performance Acoustic Design", "Integrated Smart Building Tech"]
+            features: ["Advanced Glass Curtain Wall", "Open-Plan Collaborative Zones", "Sustainable Material Palette", "High-Performance Acoustic Design", "Integrated Smart Building Tech"],
+            gallery: [
+                { url: "/images/proj_scm.png", title: "Headquarters Facade", desc: "Expansive glass facade for maximum natural light." },
+                { url: "/images/slide1.png", title: "Collaborative Zone", desc: "Modern open-plan space designed for employee wellness." }
+            ]
         },
         {
             slug: "well-grounded",
@@ -179,7 +208,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "High-end creative office renovation focusing on industrial-chic aesthetics and collaborative green spaces.",
             fullDesc: "Well Grounded involved the conversion of a heritage commercial space into a modern creative hub. The project centered on an 'industrial-chic' design language, utilizing exposed brick, reclaimed wood, and integrated indoor greenery. Our construction team meticulously preserved original architectural details while installing state-of-the-art infrastructure for a seamless blend of past and future.",
-            features: ["Heritage Detail Preservation", "Custom Millwork & Woodwork", "Indoor Vertical Gardens", "Sophisticated Lighting Design", "Collaborative Breakout Spaces"]
+            features: ["Heritage Detail Preservation", "Custom Millwork & Woodwork", "Indoor Vertical Gardens", "Sophisticated Lighting Design", "Collaborative Breakout Spaces"],
+            gallery: [
+                { url: "/images/proj_grounded.png", title: "Creative Hub", desc: "Heritage brickwork meeting modern industrial design." },
+                { url: "/images/about_thumbnail_3.png", title: "Green Workspace", desc: "Integrated indoor greenery to boost productivity." }
+            ]
         },
         {
             slug: "bo-li",
@@ -191,7 +224,11 @@ export const commercialProjects = {
             status: "Completed",
             shortDesc: "Ultra-minimalist executive office fit-out defined by clean architectural lines and premium finishes.",
             fullDesc: "The Bo Li executive suite project is a masterclass in minimalist architectural design. Located in a premier business district, this development focused on precision execution and high-grade materials. The design features floor-to-ceiling architectural glass, seamless stone surfaces, and bespoke furniture integration to create an atmosphere of quiet authority and professional excellence.",
-            features: ["Architectural Glass Partitions", "Seamless Stone Surfaces", "Minimalist Lighting Integration", "Custom Executive Furniture", "Hidden Technology Infrastructure"]
+            features: ["Architectural Glass Partitions", "Seamless Stone Surfaces", "Minimalist Lighting Integration", "Custom Executive Furniture", "Hidden Technology Infrastructure"],
+            gallery: [
+                { url: "/images/proj_boli.png", title: "Minimalist Authority", desc: "Clean lines and premium stone finishes." },
+                { url: "/images/services_condo.png", title: "Executive Boardroom", desc: "State-of-the-art infrastructure hidden within a minimal shell." }
+            ]
         }
     ],
     daycare: [

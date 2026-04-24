@@ -8,10 +8,7 @@ export default function Footer() {
             borderTop: '1px solid rgba(255,255,255,0.05)'
         }}>
             <div className="container" style={{ width: '100%' }}>
-                <div className="footer-grid" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(4, 1fr)',
-                    gap: 'var(--ds-spacing-md)',
+                <div className="footer-grid grid-4" style={{
                     marginBottom: '4rem'
                 }}>
                     <div className="footer-col">
@@ -59,6 +56,37 @@ export default function Footer() {
                     &copy; {new Date().getFullYear()} Ridgeway Services & Construction. Engineered for Excellence in Canada.
                 </div>
             </div>
+
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .footer-grid {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        gap: 3rem;
+                    }
+                    .footer-col {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .footer-col ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .footer-bottom {
+                        padding: 1rem 0 0.25rem !important;
+                        margin-top: 0 !important;
+                    }
+                    .footer-grid {
+                        margin-bottom: 2rem !important;
+                        gap: 2rem !important;
+                    }
+                }
+            `}</style>
         </footer>
     );
 }

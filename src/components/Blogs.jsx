@@ -28,7 +28,9 @@ export default function Blogs({ className = "" }) {
     const scroll = (direction) => {
         if (scrollRef.current) {
             const container = scrollRef.current;
-            const scrollAmount = 405; // Card width (380) + gap (25)
+            const cardWidth = container.querySelector('.blog-card')?.offsetWidth || 380;
+            const gap = 40; // 2.5rem
+            const scrollAmount = cardWidth + gap;
             const scrollTo = direction === 'left'
                 ? container.scrollLeft - scrollAmount
                 : container.scrollLeft + scrollAmount;
@@ -43,8 +45,8 @@ export default function Blogs({ className = "" }) {
     return (
         <section id="blog" className={`blogs section-padding animate-fade-in ${className}`} style={{ backgroundColor: 'var(--ds-bg-secondary)', overflow: 'hidden' }}>
             <div className="container">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
-                    <div>
+                <div className="blog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
+                    <div className="blog-title-area">
                         <span style={{ color: 'var(--ds-accent-main)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1rem', display: 'block' }}>
                             Knowledge Hub
                         </span>
@@ -52,7 +54,7 @@ export default function Blogs({ className = "" }) {
                     </div>
 
                     {/* Navigation Arrows */}
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="blog-nav-arrows" style={{ display: 'flex', gap: '1.5rem' }}>
                         <button
                             onClick={() => scroll('left')}
                             disabled={!canScrollLeft}
@@ -142,12 +144,7 @@ export default function Blogs({ className = "" }) {
                         paddingTop: '10px' // Prevent lift clipping
                     }}
                 >
-                    <style dangerouslySetInnerHTML={{
-                        __html: `
-                        .blogs-slider::-webkit-scrollbar {
-                            display: none;
-                        }
-                    `}} />
+
 
                     {blogs.map((b, i) => (
                         <article key={i} className="blog-card" style={{
@@ -157,7 +154,6 @@ export default function Blogs({ className = "" }) {
                             boxShadow: 'var(--ds-shadow-sm)',
                             transition: 'all 0.4s ease',
                             border: '1px solid var(--ds-border-light)',
-                            flex: '0 0 380px',
                             scrollSnapAlign: 'start',
                             display: 'flex',
                             flexDirection: 'column'
@@ -177,7 +173,7 @@ export default function Blogs({ className = "" }) {
                                 height: '240px',
                                 flexShrink: 0
                             }} />
-                            <div className="blog-card-content" style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                            <div className="blog-card-content" style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                                 <span style={{ color: 'var(--ds-accent-main)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{b.tag}</span>
                                 <h3 className="heading-3" style={{ marginTop: '0.75rem', marginBottom: '1rem', fontSize: '1.4rem', fontWeight: '600' }}>{b.title}</h3>
                                 <p className="body-text" style={{ fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', color: 'var(--ds-text-secondary)' }}>{b.desc}</p>
@@ -198,6 +194,51 @@ export default function Blogs({ className = "" }) {
                     ))}
                 </div>
             </div>
+            <style jsx>{`
+                .blogs-slider::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                .blog-card {
+                    flex: 0 0 calc((100% - 5rem) / 3);
+                    min-width: 320px;
+                }
+
+                .blog-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: var(--ds-shadow-lg);
+                }
+
+                @media (max-width: 1024px) {
+                    .blog-card {
+                        flex: 0 0 calc((100% - 2.5rem) / 2) !important;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .blog-header {
+                        flex-direction: column !important;
+                        align-items: center !important;
+                        text-align: center !important;
+                        gap: 2rem;
+                    }
+                    .blog-card {
+                        flex: 0 0 85% !important;
+                        min-width: 300px !important;
+                    }
+                    .blog-title-area {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+                
+                @media (max-width: 600px) {
+                    .blog-card {
+                        flex: 0 0 100% !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

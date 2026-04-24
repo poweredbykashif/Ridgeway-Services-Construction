@@ -1,3 +1,4 @@
+"use client";
 export default function Services() {
     const services = [
         {
@@ -24,23 +25,28 @@ export default function Services() {
 
     return (
         <section id="services" className="section-padding animate-fade-in services-section" style={{ backgroundColor: 'var(--ds-bg-primary)' }}>
-            <div className="container">
-                <span style={{ color: 'var(--ds-accent-main)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1rem', display: 'block' }}>
+            <div className="container services-container">
+                <span className="services-tag" style={{ color: 'var(--ds-accent-main)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1rem', display: 'block' }}>
                     What We Do
                 </span>
-                <h2 className="heading-1" style={{ marginBottom: '3rem' }}>Our Services</h2>
+                <h2 className="heading-1 services-title" style={{ marginBottom: '3rem' }}>Our Services</h2>
                 <div className="services-grid">
                     {services.map((s, i) => (
-                        <div key={i} className="service-item" style={{ textAlign: 'left', alignItems: 'flex-start' }}>
-                            <div className="service-img-wrapper" style={{ boxShadow: 'var(--ds-shadow-md)', borderRadius: 'var(--ds-radius-md)', position: 'relative' }}>
-                                <img src={s.img} alt={s.title} className="service-img" />
+                        <div key={i} className="service-item">
+                            <div className="service-img-wrapper" style={{
+                                boxShadow: 'var(--ds-shadow-md)',
+                                borderRadius: 'var(--ds-radius-md)',
+                                position: 'relative',
+                                backgroundColor: '#111'
+                            }}>
+                                <img src={s.img} alt={s.title} className="service-img" style={{ filter: 'brightness(0.88)' }} />
                                 <div style={{
                                     position: 'absolute',
                                     top: 0,
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%)',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.2) 100%)',
                                     zIndex: 1
                                 }}></div>
                                 <div style={{
@@ -58,7 +64,7 @@ export default function Services() {
                                     <p className="body-text" style={{
                                         padding: '0',
                                         textAlign: 'center',
-                                        color: '#ffffff',
+                                        color: '#cccccc',
                                         fontSize: '0.9rem',
                                         lineHeight: '1.6',
                                         textShadow: '0 2px 10px rgba(0,0,0,0.5)',
@@ -89,6 +95,37 @@ export default function Services() {
                     ))}
                 </div>
             </div>
+            <style jsx>{`
+                .services-container {
+                    text-align: left;
+                }
+                .service-item {
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                @media (max-width: 768px) {
+                    .services-section {
+                        padding-top: 3rem !important;
+                        padding-bottom: 3rem !important;
+                    }
+                    .services-title {
+                        margin-bottom: 1.5rem !important;
+                    }
+                    .services-grid {
+                        gap: 0.75rem !important;
+                        margin-top: 1rem !important;
+                    }
+                    .services-container {
+                        text-align: center;
+                    }
+                    .service-item {
+                        text-align: center;
+                        align-items: center;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

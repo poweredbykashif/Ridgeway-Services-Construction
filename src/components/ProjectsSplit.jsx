@@ -47,42 +47,24 @@ export default function ProjectsSplit() {
             }} />
 
             <div className="container" style={{ position: 'relative', zIndex: 5, width: '100%' }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: 'var(--ds-spacing-md)'
-                }}>
+                <div className="projects-grid-container">
                     {/* Residential Card */}
                     <div className="project-half" style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        padding: '0' // Remove inherited padding to match service cards
+                        padding: '0'
                     }}>
-                        <div style={{
-                            position: 'relative',
-                            padding: '4rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            backgroundColor: 'rgba(255,255,255,0.85)',
-                            backdropFilter: 'blur(25px)',
-                            borderRadius: 'var(--ds-radius-md)',
-                            width: '100%',
-                            minHeight: '550px',
-                            boxShadow: 'var(--ds-shadow-lg)',
-                            border: '1px solid rgba(255,255,255,0.3)'
-                        }}>
+                        <div className="project-card-inner">
                             <span style={{ color: 'var(--ds-accent-main)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.15em', marginBottom: '1.25rem', display: 'block' }}>
                                 Curated Living
                             </span>
-                            <h2 className="heading-1" style={{ marginBottom: '1.5rem', fontSize: '3.5rem', color: '#111', lineHeight: '1.1' }}>Residential</h2>
+                            <h2 className="heading-1" style={{ marginBottom: '1.5rem', color: '#111', lineHeight: '1.1' }}>Residential</h2>
                             <p className="body-text" style={{ fontSize: '1.2rem', maxWidth: '500px', color: '#333', lineHeight: '1.6' }}>
                                 Creating bespoke dream homes with modern luxury aesthetics and functional architectural spaces.
                             </p>
                             <a href="/projects/residential" className="btn" style={{
                                 marginTop: '3rem',
-                                alignSelf: 'flex-start',
                                 textDecoration: 'none',
                                 background: 'var(--ds-accent-main)',
                                 color: '#fff',
@@ -99,32 +81,18 @@ export default function ProjectsSplit() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        padding: '0' // Remove inherited padding to match service cards
+                        padding: '0'
                     }}>
-                        <div style={{
-                            position: 'relative',
-                            padding: '4rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            backgroundColor: 'rgba(255,255,255,0.85)',
-                            backdropFilter: 'blur(25px)',
-                            borderRadius: 'var(--ds-radius-md)',
-                            width: '100%',
-                            minHeight: '550px',
-                            boxShadow: 'var(--ds-shadow-lg)',
-                            border: '1px solid rgba(255,255,255,0.3)'
-                        }}>
+                        <div className="project-card-inner">
                             <span style={{ color: 'var(--ds-accent-main)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.15em', marginBottom: '1.25rem', display: 'block' }}>
                                 Urban Infrastructure
                             </span>
-                            <h2 className="heading-1" style={{ marginBottom: '1.5rem', fontSize: '3.5rem', color: '#111', lineHeight: '1.1' }}>Commercial</h2>
+                            <h2 className="heading-1" style={{ marginBottom: '1.5rem', color: '#111', lineHeight: '1.1' }}>Commercial</h2>
                             <p className="body-text" style={{ fontSize: '1.1rem', maxWidth: '450px', color: '#333', lineHeight: '1.6' }}>
                                 Delivering robust architectural spaces engineered for global business growth and metropolitan productivity.
                             </p>
                             <a href="/projects/commercial" className="btn" style={{
                                 marginTop: '2.5rem',
-                                alignSelf: 'flex-start',
                                 textDecoration: 'none',
                                 background: 'var(--ds-accent-main)',
                                 color: '#fff',
@@ -137,6 +105,43 @@ export default function ProjectsSplit() {
                     </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                .projects-grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--ds-spacing-md);
+                    padding: 0 1.5rem;
+                }
+                .project-card-inner {
+                    position: relative;
+                    padding: 3rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: rgba(255, 255, 255, 0.98);
+                    backdrop-filter: blur(20px);
+                    border-radius: var(--ds-radius-md);
+                    width: 100%;
+                    min-height: 450px;
+                    box-shadow: var(--ds-shadow-lg);
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    text-align: center;
+                    align-items: center;
+                }
+                @media (min-width: 768px) {
+                    .projects-grid-container {
+                        grid-template-columns: repeat(2, 1fr);
+                        padding: 0;
+                    }
+                    .project-card-inner {
+                        padding: 4rem;
+                        min-height: 550px;
+                        text-align: left;
+                        align-items: flex-start;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

@@ -3,33 +3,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import Blogs from "@/components/Blogs";
+import { commercialProjects } from "@/data/projects";
 
 export default function CommercialProjects() {
-    const categories = [
-        {
-            title: "Retail",
-            desc: "High-end retail storefronts and showroom fit-outs designed to enhance brand presence and customer experience.",
-            link: "/projects/commercial/retail",
-            img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop"
-        },
-        {
-            title: "Restaurants",
-            desc: "Expertly crafted hospitality spaces including fine dining, casual eateries, and premium cafe environments.",
-            link: "/projects/commercial/restaurants",
-            img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
-        },
-        {
-            title: "Offices",
-            desc: "Sophisticated corporate environments engineered for productivity, collaboration, and modern professional needs.",
-            link: "/projects/commercial/offices",
-            img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
-        },
-        {
-            title: "Daycare",
-            desc: "Safe and inspiring learning environments built with premium materials for the next generation.",
-            link: "/projects/commercial/daycare",
-            img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop"
-        }
+    // Flatten projects for listing
+    const allProjects = [
+        ...commercialProjects.retail.map(p => ({ ...p, sector: 'Retail' })),
+        ...commercialProjects.restaurants.map(p => ({ ...p, sector: 'Restaurants' })),
+        ...commercialProjects.offices.map(p => ({ ...p, sector: 'Offices' })),
+        ...commercialProjects.daycare.map(p => ({ ...p, sector: 'Daycare' }))
     ];
 
     return (
@@ -38,89 +20,122 @@ export default function CommercialProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
+                <section className="section-padding commercial-hero" style={{ paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
-                        <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
+                        <span className="hero-tag" style={{ color: '#0042bb', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Specialized Sectors
                         </span>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem', marginTop: '0.5rem' }}>Commercial</h1>
-                        <p className="body-text" style={{ maxWidth: '800px', margin: '0', fontSize: '1.1rem' }}>
+                        <p className="body-text" style={{ maxWidth: '800px', fontSize: '1.1rem' }}>
                             Providing robust commercial spaces across diverse industries, from luxury retail to sophisticated
                             office environments and specialized childhood education facilities.
                         </p>
                     </div>
+                    <style jsx>{`
+                        .commercial-hero {
+                            text-align: left;
+                        }
+                        .body-text {
+                            margin: 0;
+                        }
+                        @media (max-width: 768px) {
+                            .commercial-hero {
+                                text-align: center;
+                            }
+                            .body-text {
+                                margin: 0 auto;
+                            }
+                        }
+                    `}</style>
                 </section>
 
-                {/* 2. Category List Section with Images */}
-                <section className="container" style={{ paddingBottom: 'var(--ds-spacing-xl)' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))', gap: '2rem' }}>
-                        {categories.map((cat, i) => (
-                            <a
-                                key={i}
-                                href={cat.link}
-                                className="commercial-cat-card animate-fade-in"
-                                style={{
-                                    position: 'relative',
-                                    height: '350px',
-                                    borderRadius: 'var(--ds-radius-md)',
-                                    overflow: 'hidden',
-                                    textDecoration: 'none',
-                                    color: '#fff',
-                                    boxShadow: 'var(--ds-shadow-md)',
-                                    transition: 'transform 0.4s ease'
-                                }}
-                                onMouseOver={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-10px)';
-                                    e.currentTarget.querySelector('.cat-img-box').style.transform = 'scale(1.1)';
-                                }}
-                                onMouseOut={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.querySelector('.cat-img-box').style.transform = 'scale(1)';
-                                }}
-                            >
-                                <div
-                                    className="cat-img-box"
-                                    style={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
+                {/* Project Sections */}
+                {allProjects.map((project, idx) => (
+                    <section key={idx} className="section-padding" style={{ borderTop: '1px solid var(--ds-border-light)' }}>
+                        <div className="container">
+                            {/* Project Title */}
+                            <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                                <h2 className="heading-2" style={{ marginBottom: '0.5rem' }}>{project.title}</h2>
+                                <p style={{ color: 'var(--ds-text-secondary)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
+                                    {project.location} • {project.sector}
+                                </p>
+                            </div>
+
+                            {/* 3x2 Image Grid */}
+                            <div className="project-gallery-grid" style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                gap: '1.5rem',
+                                marginBottom: '3rem'
+                            }}>
+                                {(project.gallery || [
+                                    { url: project.img, title: project.title, desc: project.shortDesc },
+                                    { url: project.img, title: project.title, desc: project.shortDesc },
+                                    { url: project.img, title: project.title, desc: project.shortDesc }
+                                ]).map((item, i) => (
+                                    <div key={i} style={{
                                         width: '100%',
-                                        height: '100%',
-                                        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url(${cat.img})`,
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        transition: 'transform 0.6s ease',
-                                        zIndex: 0
+                                        maxWidth: '350px',
+                                        height: '350px',
+                                        borderRadius: 'var(--ds-radius-md)',
+                                        overflow: 'hidden',
+                                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                                        transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
+                                        cursor: 'pointer',
+                                        position: 'relative'
                                     }}
-                                />
-                                <div style={{
-                                    position: 'relative',
-                                    zIndex: 1,
-                                    height: '100%',
-                                    padding: '3rem',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'flex-end'
-                                }}>
-                                    <h2 className="heading-2" style={{ color: '#fff', margin: 0, fontSize: '2.5rem' }}>{cat.title}</h2>
-                                    <p style={{ margin: '0.5rem 0 0', color: 'rgba(255,255,255,0.9)', maxWidth: '400px' }}>{cat.desc}</p>
-                                    <div style={{ marginTop: '1.5rem', fontWeight: 'bold', color: '#ff6600', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                        Explore Sector <span>↗</span>
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1.02)';
+                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
+                                            if (overlay) overlay.style.opacity = '1';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
+                                            if (overlay) overlay.style.opacity = '0';
+                                        }}
+                                    >
+                                        <img src={item.url} alt={`${project.title} view ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <div className="gallery-overlay" style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundColor: 'rgba(0,0,0,0.7)',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            padding: '2rem',
+                                            opacity: 0,
+                                            transition: 'opacity 0.4s ease',
+                                            zIndex: 2,
+                                            textAlign: 'center'
+                                        }}>
+                                            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>{item.title}</h4>
+                                            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', lineHeight: '1.4' }}>{item.desc}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </section>
+                                ))}
+                            </div>
 
-                {/* 3. Blogs Section */}
+                            <div style={{ textAlign: 'center' }}>
+                                <a href={`/projects/commercial/${project.slug}`} className="btn outline">Explore Case Study</a>
+                            </div>
+                        </div>
+                    </section>
+                ))}
+
+                {/* Blogs Section */}
                 <Blogs />
 
-                {/* 4. Newsletter Section */}
+                {/* Newsletter Section */}
                 <Newsletter />
             </main>
 
-            {/* 5. Footer Section */}
+            {/* Footer Section */}
             <Footer />
         </div>
     );

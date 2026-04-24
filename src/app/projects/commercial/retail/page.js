@@ -16,7 +16,7 @@ export default function RetailProjects() {
                 {/* 1. Header Section */}
                 <section className="section-padding" style={{ textAlign: 'left', paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
-                        <span style={{ color: '#ff6600', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
+                        <span style={{ color: '#0042bb', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Retail Portfolio
                         </span>
                         <h1 className="heading-1" style={{ marginBottom: '1.5rem', marginTop: '0.5rem' }}>Retail Excellence</h1>
@@ -41,38 +41,64 @@ export default function RetailProjects() {
 
                             {/* 3x2 Image Grid */}
                             <div className="project-gallery-grid" style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
                                 gap: '1.5rem',
                                 marginBottom: '3rem'
                             }}>
                                 {/* Using project main image + stylized retail architectural shots */}
                                 {[
-                                    project.img,
-                                    `https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1000&auto=format&fit=crop`,
-                                    `https://images.unsplash.com/photo-1534452203294-49c8ad160cae?q=80&w=1000&auto=format&fit=crop`
-                                ].map((url, i) => (
+                                    { url: project.img, title: "Main Display", desc: "Premium retail window and entrance design." },
+                                    { url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop", title: "Interior Layout", desc: "Optimized floor planning for customer flow." },
+                                    { url: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1000&auto=format&fit=crop", title: "Custom Fixtures", desc: "Hand-crafted shelving and display units." },
+                                    { url: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop", title: "Lighting Design", desc: "Advanced LED systems for product highlighting." },
+                                    { url: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1000&auto=format&fit=crop", title: "Material Palette", desc: "Premium finishes and high-traffic durability." },
+                                    { url: "https://images.unsplash.com/photo-1534452203294-49c8ad160cae?q=80&w=1000&auto=format&fit=crop", title: "Brand Identity", desc: "Integrated branding through architectural elements." }
+                                ].map((item, i) => (
                                     <div key={i} style={{
+                                        width: '100%',
+                                        maxWidth: '350px',
                                         height: '350px',
                                         borderRadius: 'var(--ds-radius-md)',
                                         overflow: 'hidden',
                                         boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                                         transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
-                                        cursor: 'pointer'
+                                        cursor: 'pointer',
+                                        position: 'relative'
                                     }}
                                         onMouseOver={(e) => {
                                             e.currentTarget.style.transform = 'scale(1.02)';
-                                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(255,102,0,0.15)';
+                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
+                                            if (overlay) overlay.style.opacity = '1';
                                         }}
                                         onMouseOut={(e) => {
                                             e.currentTarget.style.transform = 'scale(1)';
-                                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
+                                            if (overlay) overlay.style.opacity = '0';
                                         }}
                                     >
-                                        <img src={url} alt={`${project.title} view ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={item.url} alt={`${project.title} view ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <div className="gallery-overlay" style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundColor: 'rgba(0,0,0,0.7)',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            padding: '2rem',
+                                            opacity: 0,
+                                            transition: 'opacity 0.4s ease',
+                                            zIndex: 2,
+                                            textAlign: 'center'
+                                        }}>
+                                            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>{item.title}</h4>
+                                            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', lineHeight: '1.4' }}>{item.desc}</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>

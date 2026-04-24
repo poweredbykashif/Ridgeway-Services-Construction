@@ -14,10 +14,10 @@ export default function Newsletter() {
                     </p>
                     <form className="newsletter-form" style={{
                         display: 'flex',
-                        gap: '0.5rem',
+                        gap: '1rem',
                         background: '#ffffff',
                         padding: '0.6rem',
-                        borderRadius: '3rem',
+                        borderRadius: '4px',
                         boxShadow: 'var(--ds-shadow-md)',
                         border: '1px solid var(--ds-border-strong)',
                         maxWidth: '600px',
@@ -30,8 +30,8 @@ export default function Newsletter() {
                             style={{
                                 border: 'none',
                                 background: 'transparent',
-                                paddingLeft: '1.8rem',
-                                borderRadius: '3rem',
+                                paddingLeft: '1rem',
+                                borderRadius: '4px',
                                 fontSize: '1rem',
                                 flex: 1
                             }}
@@ -40,13 +40,13 @@ export default function Newsletter() {
                         <button type="submit" className="btn" style={{
                             background: 'var(--ds-accent-main)',
                             color: '#fff',
-                            borderRadius: '3rem',
-                            padding: '0.85rem 3rem',
+                            borderRadius: '4px',
+                            padding: '0.85rem 2.5rem',
                             fontWeight: 'bold',
                             fontSize: '0.95rem'
                         }}>Subscribe</button>
                     </form>
-                    <p style={{ marginTop: '2rem', fontSize: '0.8rem', color: 'var(--ds-text-muted)', fontStyle: 'italic' }}>
+                    <p style={{ marginTop: '2rem', fontSize: '0.8rem', color: 'var(--ds-text-muted)' }}>
                         We respect your privacy. No spam, only architectural excellence.
                     </p>
                 </div>

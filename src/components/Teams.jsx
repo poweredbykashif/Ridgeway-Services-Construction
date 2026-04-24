@@ -1,7 +1,41 @@
 "use client";
-import React from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function Teams() {
+    const scrollRef = useRef(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            const progress = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+            setScrollProgress(progress);
+        }
+    };
+
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const container = scrollRef.current;
+            const cardWidth = container.querySelector('.team-premium-card')?.offsetWidth || 300;
+            const gap = 24; // 1.5rem
+            const scrollAmount = cardWidth + gap;
+            
+            container.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    useEffect(() => {
+        const ref = scrollRef.current;
+        if (ref) {
+            ref.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        }
+        return () => ref?.removeEventListener('scroll', handleScroll);
+    }, []);
+
     // Names and roles from the reference image
     const team = [
         {
@@ -27,6 +61,18 @@ export default function Teams() {
             role: "Investissement Immobilier",
             img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
             bio: "A visionary real estate investor and co-founder of Investissement Locatif. He is committed to making property investment accessible and profitable."
+        },
+        {
+            name: "Sarah Jenkins",
+            role: "Lead Architect",
+            img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
+            bio: "Expert in sustainable urban design with over 15 years of experience in metropolitan developments."
+        },
+        {
+            name: "Marcus Thorne",
+            role: "Structural Engineer",
+            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+            bio: "Specializes in high-rise structural integrity and innovative building materials for luxury projects."
         }
     ];
 
@@ -42,11 +88,11 @@ export default function Teams() {
 
             <div className="team-carousel-wrapper">
                 {/* Navigation arrows */}
-                <button className="carousel-nav-btn prev">
+                <button className="carousel-nav-btn prev" onClick={() => scroll('left')}>
                     <span>&lsaquo;</span>
                 </button>
 
-                <div className="team-grid-slider">
+                <div ref={scrollRef} className="team-grid-slider">
                     {team.map((member, i) => (
                         <div key={i} className="team-premium-card">
                             <div className="team-card-image-wrapper">
@@ -71,7 +117,7 @@ export default function Teams() {
                     ))}
                 </div>
 
-                <button className="carousel-nav-btn next">
+                <button className="carousel-nav-btn next" onClick={() => scroll('right')}>
                     <span>&rsaquo;</span>
                 </button>
             </div>
@@ -79,7 +125,7 @@ export default function Teams() {
             {/* Bottom progress indicator */}
             <div className="team-progress-container">
                 <div className="team-progress-bar">
-                    <div className="team-progress-active" style={{ width: '25%' }} />
+                    <div className="team-progress-active" style={{ width: `${Math.max(10, scrollProgress)}%` }} />
                 </div>
             </div>
         </section>
