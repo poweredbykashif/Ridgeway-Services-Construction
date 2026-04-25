@@ -11,7 +11,7 @@ export default function ResidentialProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding residential-hero" style={{ paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
+                <section className="section-padding residential-hero hero-text-left" style={{ paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
                         <span className="hero-tag" style={{ color: '#0042bb', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Portfolio
@@ -22,22 +22,6 @@ export default function ResidentialProjects() {
                             transforming visions into premium living spaces across the Greater Toronto Area.
                         </p>
                     </div>
-                    <style jsx>{`
-                        .residential-hero {
-                            text-align: left;
-                        }
-                        .body-text {
-                            margin: 0;
-                        }
-                        @media (max-width: 768px) {
-                            .residential-hero {
-                                text-align: center;
-                            }
-                            .body-text {
-                                margin: 0 auto;
-                            }
-                        }
-                    `}</style>
                 </section>
 
                 {/* Project Sections */}

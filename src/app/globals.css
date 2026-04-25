@@ -245,3 +245,55 @@ body {
     gap: 2.5rem;
   }
 }
+/* Project Pages & Detail Pages */
+.hero-text-left {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .hero-text-left {
+    text-align: center !important;
+  }
+  .hero-text-left .body-text {
+    margin: 0 auto !important;
+  }
+}
+
+.project-detail-header {
+  text-align: left;
+}
+
+.project-meta-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.project-content-grid {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 768px) {
+  .project-detail-header {
+    text-align: center !important;
+  }
+  .project-meta-info {
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .project-overview-section {
+    text-align: center !important;
+  }
+  .project-feature-item {
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-content-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) !important;
+  }
+}

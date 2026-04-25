@@ -84,6 +84,7 @@ export default function RestaurantProjects() {
                             gap: '1.5rem',
                             marginBottom: '3rem'
                         }}>
+                            {brand.images.map((item, iIndex) => (
                                 <div key={iIndex} className="gallery-item" style={{
                                     height: '350px',
                                     borderRadius: 'var(--ds-radius-md)',
@@ -117,6 +118,7 @@ export default function RestaurantProjects() {
                                     }}>
                                         <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>{item.title}</h4>
                                         <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', lineHeight: '1.4' }}>{item.desc}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>

@@ -25,12 +25,12 @@ export default async function ProjectDetailPage({ params }) {
 
             <article className="project-detail-wrapper" style={{ padding: 'calc(var(--ds-spacing-xl) + 60px) 0 var(--ds-spacing-xl)' }}>
                 <div className="container">
-                    <div className="detail-header" style={{ marginBottom: '3rem' }}>
+                    <div className="detail-header project-detail-header" style={{ marginBottom: '3rem' }}>
                         <span style={{ color: '#0042bb', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             {project.location} • {project.year}
                         </span>
                         <h1 className="heading-1" style={{ marginTop: '0.5rem', marginBottom: '1.5rem' }}>{project.title}</h1>
-                        <div className="meta-info" style={{ display: 'flex', gap: '2rem', borderTop: '1px solid var(--ds-border-light)', paddingTop: '1.5rem' }}>
+                        <div className="meta-info project-meta-info" style={{ borderTop: '1px solid var(--ds-border-light)', paddingTop: '1.5rem' }}>
                             <div>
                                 <span style={{ color: 'var(--ds-text-muted)', fontSize: '0.75rem', textTransform: 'uppercase' }}>TYPE</span>
                                 <p style={{ fontWeight: '500', marginTop: '0.25rem' }}>{project.type}</p>
@@ -44,8 +44,8 @@ export default async function ProjectDetailPage({ params }) {
 
                     <ProjectGallery gallery={gallery} />
 
-                    <div className="project-content-grid" style={{ display: 'grid', gap: '4rem' }}>
-                        <div className="overview-section">
+                    <div className="project-content-grid" style={{}}>
+                        <div className="overview-section project-overview-section">
                             <h2 className="heading-2" style={{ marginBottom: '1.5rem' }}>Project Overview</h2>
                             
                             {/* Key Features moved here */}
@@ -65,7 +65,7 @@ export default async function ProjectDetailPage({ params }) {
                                     gap: '1rem'
                                 }}>
                                     {project.features.map((feature, i) => (
-                                        <li key={i} className="feature-item" style={{
+                                        <li key={i} className="feature-item project-feature-item" style={{
                                             display: 'flex',
                                             alignItems: 'center',
                                             fontSize: '0.95rem',
@@ -92,38 +92,7 @@ export default async function ProjectDetailPage({ params }) {
                 </div>
             </article>
 
-            <style jsx>{`
-                .detail-header {
-                    text-align: left;
-                }
-                .meta-info {
-                    justify-content: flex-start;
-                }
-                .project-content-grid {
-                    grid-template-columns: 1fr;
-                }
-                @media (max-width: 768px) {
-                    .detail-header {
-                        text-align: center;
-                    }
-                    .meta-info {
-                        justify-content: center;
-                        flex-direction: column;
-                        gap: 1.5rem !important;
-                    }
-                    .overview-section {
-                        text-align: center;
-                    }
-                    .feature-item {
-                        justify-content: center;
-                    }
-                }
-                @media (min-width: 768px) {
-                    .project-content-grid {
-                        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-                    }
-                }
-            `}</style>
+
 
             <Newsletter />
             <Footer />

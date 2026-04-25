@@ -19,7 +19,7 @@ export default function CommercialProjects() {
 
             <main>
                 {/* 1. Header Section */}
-                <section className="section-padding commercial-hero" style={{ paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
+                <section className="section-padding commercial-hero hero-text-left" style={{ paddingTop: 'calc(var(--ds-spacing-xl) + 40px)' }}>
                     <div className="container">
                         <span className="hero-tag" style={{ color: '#0042bb', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em' }}>
                             Specialized Sectors
@@ -30,22 +30,6 @@ export default function CommercialProjects() {
                             office environments and specialized childhood education facilities.
                         </p>
                     </div>
-                    <style jsx>{`
-                        .commercial-hero {
-                            text-align: left;
-                        }
-                        .body-text {
-                            margin: 0;
-                        }
-                        @media (max-width: 768px) {
-                            .commercial-hero {
-                                text-align: center;
-                            }
-                            .body-text {
-                                margin: 0 auto;
-                            }
-                        }
-                    `}</style>
                 </section>
 
                 {/* Project Sections */}
