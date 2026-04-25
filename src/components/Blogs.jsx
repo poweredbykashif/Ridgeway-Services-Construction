@@ -53,9 +53,9 @@ export default function Blogs({ className = "" }) {
                         <h2 className="heading-1">Latest Insights</h2>
                     </div>
 
-                    {/* Navigation Arrows */}
                     <div className="blog-nav-arrows" style={{ display: 'flex', gap: '1.5rem' }}>
                         <button
+                            className="blog-nav-btn prev"
                             onClick={() => scroll('left')}
                             disabled={!canScrollLeft}
                             style={{
@@ -73,24 +73,11 @@ export default function Blogs({ className = "" }) {
                                 color: canScrollLeft ? 'var(--ds-text-primary)' : 'var(--ds-text-muted)',
                                 opacity: canScrollLeft ? 1 : 0.5
                             }}
-                            onMouseOver={(e) => {
-                                if (canScrollLeft) {
-                                    e.currentTarget.style.backgroundColor = 'var(--ds-accent-main)';
-                                    e.currentTarget.style.color = '#fff';
-                                    e.currentTarget.style.borderColor = 'var(--ds-accent-main)';
-                                }
-                            }}
-                            onMouseOut={(e) => {
-                                if (canScrollLeft) {
-                                    e.currentTarget.style.backgroundColor = 'var(--ds-bg-primary)';
-                                    e.currentTarget.style.color = 'var(--ds-text-primary)';
-                                    e.currentTarget.style.borderColor = 'var(--ds-border-strong)';
-                                }
-                            }}
                         >
                             ←
                         </button>
                         <button
+                            className="blog-nav-btn next"
                             onClick={() => scroll('right')}
                             disabled={!canScrollRight}
                             style={{
@@ -107,20 +94,6 @@ export default function Blogs({ className = "" }) {
                                 transition: 'all 0.3s ease',
                                 color: canScrollRight ? 'var(--ds-text-primary)' : 'var(--ds-text-muted)',
                                 opacity: canScrollRight ? 1 : 0.5
-                            }}
-                            onMouseOver={(e) => {
-                                if (canScrollRight) {
-                                    e.currentTarget.style.backgroundColor = 'var(--ds-accent-main)';
-                                    e.currentTarget.style.color = '#fff';
-                                    e.currentTarget.style.borderColor = 'var(--ds-accent-main)';
-                                }
-                            }}
-                            onMouseOut={(e) => {
-                                if (canScrollRight) {
-                                    e.currentTarget.style.backgroundColor = 'var(--ds-bg-primary)';
-                                    e.currentTarget.style.color = 'var(--ds-text-primary)';
-                                    e.currentTarget.style.borderColor = 'var(--ds-border-strong)';
-                                }
                             }}
                         >
                             →
@@ -144,8 +117,6 @@ export default function Blogs({ className = "" }) {
                         paddingTop: '10px' // Prevent lift clipping
                     }}
                 >
-
-
                     {blogs.map((b, i) => (
                         <article key={i} className="blog-card" style={{
                             backgroundColor: 'var(--ds-bg-primary)',
@@ -157,15 +128,7 @@ export default function Blogs({ className = "" }) {
                             scrollSnapAlign: 'start',
                             display: 'flex',
                             flexDirection: 'column'
-                        }}
-                            onMouseOver={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-10px)';
-                                e.currentTarget.style.boxShadow = 'var(--ds-shadow-lg)';
-                            }}
-                            onMouseOut={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = 'var(--ds-shadow-sm)';
-                            }}>
+                        }}>
                             <div className="blog-card-img" style={{
                                 backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${b.img})`,
                                 backgroundSize: 'cover',
@@ -207,6 +170,12 @@ export default function Blogs({ className = "" }) {
                 .blog-card:hover {
                     transform: translateY(-5px);
                     box-shadow: var(--ds-shadow-lg);
+                }
+
+                .blog-nav-btn:not(:disabled):hover {
+                    background-color: var(--ds-accent-main) !important;
+                    color: #fff !important;
+                    border-color: var(--ds-accent-main) !important;
                 }
 
                 @media (max-width: 1024px) {

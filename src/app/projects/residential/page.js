@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
@@ -62,29 +61,17 @@ export default function ResidentialProjects() {
                                 marginBottom: '3rem'
                             }}>
                                 {project.gallery.map((item, i) => (
-                                    <div key={i} style={{
+                                    <div key={i} className="gallery-item" style={{
                                         width: '100%',
                                         maxWidth: '350px',
                                         height: '350px',
                                         borderRadius: 'var(--ds-radius-md)',
                                         overflow: 'hidden',
                                         boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-                                        transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
                                         cursor: 'pointer',
                                         position: 'relative'
-                                    }}
-                                        onMouseOver={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1.02)';
-                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
-                                            if (overlay) overlay.style.opacity = '1';
-                                        }}
-                                        onMouseOut={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1)';
-                                            const overlay = e.currentTarget.querySelector('.gallery-overlay');
-                                            if (overlay) overlay.style.opacity = '0';
-                                        }}
-                                    >
-                                        <img src={item.url} alt={`${project.title} view ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    }}>
+                                        <img src={item.url} alt={`${project.title} view ${i + 1}`} className="gallery-img" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)' }} />
                                         <div className="gallery-overlay" style={{
                                             position: 'absolute',
                                             top: 0,

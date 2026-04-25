@@ -84,31 +84,19 @@ export default function RestaurantProjects() {
                             gap: '1.5rem',
                             marginBottom: '3rem'
                         }}>
-                            {brand.images.map((item, iIndex) => (
-                                <div key={iIndex} style={{
+                                <div key={iIndex} className="gallery-item" style={{
                                     height: '350px',
                                     borderRadius: 'var(--ds-radius-md)',
                                     overflow: 'hidden',
                                     boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-                                    transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
                                     cursor: 'pointer',
                                     position: 'relative'
-                                }}
-                                    onMouseOver={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1.02)';
-                                        const overlay = e.currentTarget.querySelector('.gallery-overlay');
-                                        if (overlay) overlay.style.opacity = '1';
-                                    }}
-                                    onMouseOut={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1)';
-                                        const overlay = e.currentTarget.querySelector('.gallery-overlay');
-                                        if (overlay) overlay.style.opacity = '0';
-                                    }}
-                                >
+                                }}>
                                     <img
                                         src={item.url}
                                         alt={`${brand.name} project detail ${iIndex + 1}`}
-                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        className="gallery-img"
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)' }}
                                     />
                                     <div className="gallery-overlay" style={{
                                         position: 'absolute',
@@ -129,11 +117,9 @@ export default function RestaurantProjects() {
                                     }}>
                                         <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>{item.title}</h4>
                                         <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', lineHeight: '1.4' }}>{item.desc}</p>
-                                    </div>
                                 </div>
                             ))}
                         </div>
-
                     </section>
                 ))}
 
